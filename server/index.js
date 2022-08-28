@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2");
 const dotenv = require("dotenv");
+const userRouter = require("./routes/userRoutes");
 
 dotenv.config();
 
@@ -22,15 +23,10 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  const sqlInsert =
-    "INSERT INTO users (name, email, username, password) VALUES ('Daniel', '12345@gmail.com', 'danrose', '12345')";
-  db.query(sqlInsert, (err, result) => {
-    if (err) {
-      throw new Error();
-    }
-    res.send("hello daniel");
-  });
+  res.send("hello");
 });
+
+app.use("/api/users", userRouter);
 
 app.listen(5000, () => {
   console.log("Server is running on 5000!");
