@@ -8,10 +8,12 @@ import CollectionsScreen from "./screens/CollectionsScreen";
 import NewArrivalsScreen from "./screens/NewArrivalsScreen";
 import ProductScreen from "./screens/ProductScreen";
 import PaymentScreen from "./screens/PaymentScreen";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<HomeScreen />}></Route>
