@@ -23,11 +23,12 @@ $hover-grey: #413f42;
 }
 
 body {
-  background-color: $color-background-alternate-2;
+  background-color: whitesmoke;
 }
 
 main {
   padding-top: 4rem;
+  height: 1000px;
 }
 
 /////////////////////////////////////////////
@@ -44,8 +45,15 @@ main {
   justify-content: space-between;
 }
 
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  margin-top: 4rem;
+}
+
 .logo {
-  padding-top: 2rem;
 }
 
 .logo:hover {
@@ -91,9 +99,16 @@ main {
 }
 
 /////////////////////////////////////////////
-//Menu
-.menu-hidden {
+//Footer
+
+.footer-container {
+  background-color: $color-secondary;
+  color: $color-primary;
+  height: 700px;
 }
+
+/////////////////////////////////////////////
+//Menu
 
 .menu {
   display: grid;

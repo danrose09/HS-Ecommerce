@@ -9,6 +9,7 @@ import NewArrivalsScreen from "./screens/NewArrivalsScreen";
 import ProductScreen from "./screens/ProductScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/payment" element={<PaymentScreen />}></Route>
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getMenuState, toggleMenu } from "../features/menuSlice";
 import Menu from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnchor } from "@fortawesome/free-solid-svg-icons";
 import { faGripLines } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [menuIsHidden, setMenuIsHidden] = useState(Boolean(true));
+  const dispatch = useDispatch();
 
   const handleMenuVisibility = () => {
-    setMenuIsHidden(false);
+    dispatch(toggleMenu({ showMenu: true }));
   };
+
+  const showMenu = useSelector(getMenuState);
+
   return (
     <div>
-      <Menu menuIsHidden={menuIsHidden} />
-
-      <div className="navbar" style={{ display: !menuIsHidden && "none" }}>
+      <div hidden={!showMenu}>
+        <Menu />
+      </div>
+      <div className="navbar" style={{ display: showMenu && "none" }}>
         <nav className="navbar-nav">
           <FontAwesomeIcon
             className="nav-icon navbar-sandwich-menu"
@@ -26,15 +31,10 @@ const Navbar = () => {
             onClick={handleMenuVisibility}
           />
           <ul className="nav-left-items">
-            <li className="nav-item">WOMEN</li>
-            <li className="nav-item">MEN</li>
+            <li className="nav-item">PATTERNS</li>
             <li className="nav-item">COLLECTIONS </li>
           </ul>
-          <FontAwesomeIcon
-            className="logo"
-            icon={faAnchor}
-            onClick={() => navigate("/")}
-          />
+
           <ul className="nav-right-items">
             <li className="nav-item">SEARCH</li>
             <li className="nav-item">SIGN IN</li>
@@ -48,6 +48,16 @@ const Navbar = () => {
             <FontAwesomeIcon className="nav-icon" icon={faShoppingBag} />
           </div>
         </nav>
+      </div>
+      <div className="logo-container">
+        <img
+          src="/images/logo-black.png"
+          className="logo"
+          onClick={() => navigate("/")}
+          height={50}
+          width={150}
+          alt="logo"
+        />
       </div>
     </div>
   );
