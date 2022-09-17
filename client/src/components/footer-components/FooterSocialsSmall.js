@@ -5,10 +5,11 @@ const FooterSocialsSmall = () => {
     <div>
       <div className="socials-container-small">
         <i
+          style={{ fontSize: "1rem" }}
           onClick={() =>
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
           }
-          className="fa-solid fa-arrow-up-from-bracket back-to-top back-to-top-hover"
+          className="fa-solid fa-arrow-up-from-bracket back-to-top back-to-top-hover socials-text-version"
         ></i>
 
         <p className="socials-text-version">Instagram</p>

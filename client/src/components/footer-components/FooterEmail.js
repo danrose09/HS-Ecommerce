@@ -10,11 +10,14 @@ const FooterEmail = () => {
           </p>
           <div style={{ width: "100%" }}>
             <form>
-              <label>Email</label>
               <input className="footer-email-input" type="email"></input>
-              <button className="footer-email-signup-button" type="submit">
-                Sign Up
-              </button>
+              <hr className="footer-divider"></hr>
+              <div>
+                <p className="footer-email-label">Email</p>
+                <button className="footer-email-signup-button" type="submit">
+                  Sign Up
+                </button>
+              </div>
             </form>
           </div>
         </div>
