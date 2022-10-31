@@ -1,14 +1,14 @@
 const footerGridItems = [
   {
     name: "Contact Us",
-    subHeadings: ["Email", "Telephone", "This", "That", "The Other Thing"],
+    subHeadings: ["Email", "Telephone", "Line"],
   },
   {
     name: "Customer Services",
-    subHeadings: ["This", "That", "The Other Thing"],
+    subHeadings: ["Products", "Returns", "Help"],
   },
-  { name: "Legal", subHeadings: ["This", "That", "The Other Thing"] },
-  { name: "About", subHeadings: ["This", "That", "The Other Thing"] },
+  { name: "Legal", subHeadings: ["Copyright", "This", "That"] },
+  { name: "About", subHeadings: ["Our Mission", "Background"] },
 ];
 
 export default footerGridItems;

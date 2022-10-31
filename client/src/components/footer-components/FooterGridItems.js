@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import footerGridItems from "../../data/footerGridItems";
 
 const FooterGridItems = () => {
@@ -15,7 +16,13 @@ const FooterGridItems = () => {
     const dropDown = (
       <ul className="footer-grid-list-sm">
         {item.subHeadings.map((subheading) => {
-          return <li className="footer-grid-list-item">{subheading}</li>;
+          return (
+            <li className="footer-grid-list-item footer-list-dropdown">
+              <Link to={`/${subheading}`} className="footer-grid-list-link">
+                {subheading}
+              </Link>
+            </li>
+          );
         })}
       </ul>
     );
@@ -36,7 +43,13 @@ const FooterGridItems = () => {
         {index === clicked && dropDown}
         <ul className="footer-grid-list">
           {item.subHeadings.map((subheading) => {
-            return <li className="footer-grid-list-item">{subheading}</li>;
+            return (
+              <li className="footer-grid-list-item">
+                <Link to={`/${subheading}`} className="footer-grid-list-link">
+                  {subheading}
+                </Link>
+              </li>
+            );
           })}
         </ul>
       </div>
