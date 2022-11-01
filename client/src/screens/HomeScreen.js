@@ -1,8 +1,12 @@
 import React from "react";
-import MainVideo from "../components/MainVideo";
+import SeasonalBanner from "../components/homescreen-components/SeasonalBanner";
 
 const HomeScreen = () => {
-  return <div className="homescreen"></div>;
+  return (
+    <div className="homescreen">
+      <SeasonalBanner />
+    </div>
+  );
 };
 
 export default HomeScreen;

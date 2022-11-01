@@ -6,11 +6,11 @@ import FooterSocialsSmall from "./footer-components/FooterSocialsSmall";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <div className="footer">
       <FooterEmail />
-      <hr className="footer-divider"></hr>
+      <hr className="footer__divider"></hr>
       <FooterGridItems />
-      <hr className="footer-divider"></hr>
+      <hr className="footer__divider"></hr>
       <FooterSocials />
       <FooterSocialsSmall />
     </div>

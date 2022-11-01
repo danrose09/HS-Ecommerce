@@ -27,12 +27,12 @@ const FooterGridItems = () => {
       </ul>
     );
     return (
-      <div className="footer-grid-item" key={index}>
+      <div className="footer__grid--item" key={index}>
         <div
-          className="footer-name-icon-container"
+          className="footer__grid--item-container"
           onClick={() => toggle(index)}
         >
-          <p className="footer-grid-category-name">{item.name}</p>
+          <p className="footer__grid--category">{item.name}</p>
 
           {index === clicked ? (
             <i className="fa-regular fa-minus plus-minus-icon"></i>
@@ -56,7 +56,7 @@ const FooterGridItems = () => {
     );
   });
 
-  return <div className="footer-grid">{gridItems}</div>;
+  return <div className="footer__grid">{gridItems}</div>;
 };
 
 export default FooterGridItems;

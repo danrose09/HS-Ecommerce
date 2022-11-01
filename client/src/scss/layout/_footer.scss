@@ -1,120 +1,114 @@
-.footer-container {
+.footer {
   background-color: $black;
   height: auto;
   padding-bottom: 2rem;
   color: whitesmoke;
-}
 
-.footer-divider {
-  background-color: $hover-grey;
-  border: 0.3px solid $hover-grey;
-  height: 0.5px;
-}
+  &__divider {
+    background-color: $hover-grey;
+    border: 0.3px solid $hover-grey;
+    height: 0.5px;
+  }
 
-.footer-email-container {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  font-family: $font-secondary;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
+  &__email {
+    &--container {
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+      font-family: $font-secondary;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
 
-.footer-email-description {
-  width: 80%;
-  margin: auto;
-}
+    &--description {
+      width: 80%;
+      margin: auto;
+    }
 
-.footer-email-input {
-  padding-top: 3rem;
-  background-color: inherit;
-  color: $hover-grey;
-  font-family: $font-secondary;
-  border: hidden;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
+    &--input {
+      padding-top: 3rem;
+      background-color: inherit;
+      color: $hover-grey;
+      font-family: $font-secondary;
+      border: hidden;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
 
-.footer-email-input:focus {
-  outline: none;
-}
+      &:focus {
+        outline: none;
+      }
+    }
 
-.footer-email-label {
-  padding-top: 0.2rem;
-  color: $hover-grey;
-}
+    &--label {
+      padding-top: 0.2rem;
+      color: $hover-grey;
+    }
 
-.footer-email-signup-button {
-  margin-top: 2rem;
-  font-family: $font-secondary;
+    &--signup-button {
+      margin-top: 2rem;
+      font-family: $font-secondary;
+      background-color: inherit;
+      color: whitesmoke;
+      border: 0.2px solid whitesmoke;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease-in-out;
 
-  background-color: inherit;
-  color: whitesmoke;
-  border: 0.2px solid whitesmoke;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-}
+      &:hover {
+        cursor: pointer;
+        color: $color-primary;
+        border: 0.2px solid $color-primary;
+      }
+    }
+  }
 
-.footer-email-signup-button:hover {
-  cursor: pointer;
-  color: $color-primary;
-  border: 0.2px solid $color-primary;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  padding: 4rem 1rem 4rem 1rem;
-
-  @include respond(tab-port) {
+  &__grid {
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding: 4rem 1rem 4rem 1rem;
+
+    @include respond(tab-port) {
+      display: grid;
+      grid-template-columns: 100%;
+    }
+
+    &--category {
+      padding-bottom: 0.2rem;
+      letter-spacing: $letter-spacing-small;
+
+      @include respond(tab-port) {
+        position: absolute;
+      }
+    }
+
+    &--item {
+      text-align: left;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      height: 100%;
+    }
+
+    &--item-container {
+      display: flex;
+      justify-content: space-between;
+
+      @include respond(tab-port) {
+        cursor: pointer;
+      }
+    }
   }
-}
-
-.footer-grid-category-name {
-  padding-bottom: 0.2rem;
-  letter-spacing: $letter-spacing-small;
-  // font-size: 0.7rem;
-  // font-weight: 400;
-
-  @include respond(tab-port) {
-    position: absolute;
-  }
-}
-
-.footer-grid-item {
-  text-align: left;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  height: 100%;
-
-  // @include respond(tab-land) {
-  //   margin: auto;
-  // }
-}
-
-.footer-name-icon-container {
-  display: flex;
-  justify-content: space-between;
-
-  @include respond(tab-port) {
-    cursor: pointer;
-  }
-
-  // @include respond(tab-land) {
-  //   cursor: pointer;
-  //   pointer-events: none;
-  // }
 }
 
 .plus-minus-icon {
-  font-family: $font-primary;
-  font-size: 1.2rem;
-  margin-left: auto;
+  display: none;
+  @include respond(tab-port) {
+    display: initial;
+    font-family: $font-primary;
+    font-size: 1.2rem;
+    margin-left: auto;
+  }
 }
 
 .plus-minus-icon:hover {
@@ -166,24 +160,14 @@
   padding-right: 1rem;
   display: flex;
   flex-direction: row;
-
-  // @include respond(tab-port) {
-  //   display: none;
-  // }
-}
-
-.socials-container-small {
-  padding-top: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .back-to-top-container {
   display: flex;
   flex-direction: row;
+  @include respond(tab-port) {
+    display: none;
+  }
 }
 
 .socials-text-version {
@@ -202,11 +186,9 @@
   margin-left: auto;
   font-weight: 200;
 
-  // @include respond(tab-port) {
-  //   display: flex;
-  //   flex-direction: row;
-  //   margin: auto;
-  // }
+  @include respond(tab-port) {
+    display: none;
+  }
 }
 
 .social-icon {
@@ -215,14 +197,28 @@
     color: #f0ebe3;
     transition: all 0.2s ease-in-out;
   }
-
-  // @include respond(tab-land) {
-  //   display: none;
-  // }
 }
 
-// .plus-minus-icon {
-//   @include respond(tab-port) {
-//     display: none;
-//   }
-// }
+.footer-grid-item {
+  margin: auto;
+}
+
+.footer-name-icon-container {
+  pointer-events: none;
+}
+
+.socials-container-small {
+  display: none;
+  @include respond(tab-port) {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.social-icon {
+  display: none;
+}

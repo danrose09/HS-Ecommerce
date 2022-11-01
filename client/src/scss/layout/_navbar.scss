@@ -33,6 +33,13 @@
   padding: 2rem 1rem;
 }
 
+.nav-icons-right {
+  display: none;
+  @include respond(tab-port) {
+    display: initial;
+  }
+}
+
 .nav-icon:hover {
   cursor: pointer;
 }
@@ -74,4 +81,12 @@
   text-underline-offset: 5px;
   color: $hover-grey;
   cursor: pointer;
+}
+
+.navbar-sandwich-menu {
+  display: none;
+
+  @include respond(tab-port) {
+    display: initial;
+  }
 }

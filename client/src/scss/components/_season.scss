@@ -1,0 +1,31 @@
+.season {
+  height: 100vh;
+  &__image {
+    position: absolute;
+    z-index: -100;
+
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  &__header {
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 12rem 0 2rem 0;
+    color: white;
+    font-size: 8rem;
+    letter-spacing: 0.3ch;
+    width: 50%;
+    animation: fadeInOut 3000ms;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: auto;
+  }
+}
