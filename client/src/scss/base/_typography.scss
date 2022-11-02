@@ -17,3 +17,12 @@
     font-size: 75%;
   }
 }
+
+.section-heading {
+  color: $color-text-primary;
+  text-align: center;
+  font-size: $font-lg;
+  letter-spacing: 0.1ch;
+  font-weight: 200;
+  padding-top: 10rem;
+}

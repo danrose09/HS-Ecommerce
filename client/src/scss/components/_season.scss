@@ -1,15 +1,23 @@
 .season {
   height: 100vh;
   &__image {
-    position: absolute;
+    position: fixed;
     z-index: -100;
-
     width: 100%;
+
     opacity: 0.9;
+
+    @include respond(tab-port) {
+      position: relative;
+    }
   }
 
   &__header {
-    display: block;
+    &--container {
+      display: block;
+      position: absolute;
+      width: 100%;
+    }
     margin: auto;
     text-align: center;
     padding: 12rem 0 2rem 0;
@@ -17,7 +25,8 @@
     font-size: 8rem;
     letter-spacing: 0.3ch;
     width: 50%;
-    animation: fadeInOut 3000ms;
+    animation: fadeIn 2000ms 1000ms;
+    animation-fill-mode: backwards;
 
     @include respond(tab-port) {
       display: none;
@@ -27,5 +36,32 @@
   &__button {
     display: block;
     margin: auto;
+    background-color: transparent;
+    color: white;
+    font-size: $font-default;
+    border-radius: 100px;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border: 2px solid white;
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include respond(tab-port) {
+      &--container {
+        padding-top: 35rem;
+        width: 100%;
+      }
+    }
+
+    @include respond(phone) {
+      &--container {
+        padding-top: 25rem;
+      }
+    }
+  }
+  //season container responsiveness
+  @include respond(tab-port) {
+    height: auto;
   }
 }
