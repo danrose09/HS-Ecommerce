@@ -1,6 +1,7 @@
 .navbar {
   width: 100%;
   position: fixed;
+  z-index: 100;
 }
 
 .navbar-nav {
@@ -15,6 +16,7 @@
   justify-content: center;
   position: fixed;
   margin-top: 4rem;
+  z-index: 100;
 }
 
 .fade-in-logo {

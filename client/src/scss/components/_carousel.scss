@@ -1,4 +1,56 @@
 .new-patterns {
   background-color: whitesmoke;
   height: 50rem;
+  @include section-padding-x-axis;
+
+  &__carousel {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    &:hover &--item:not(:hover) {
+      opacity: 0.8;
+    }
+
+    &--item {
+      height: 40rem;
+      text-align: center;
+      transition: all 200ms ease-in-out;
+      backface-visibility: hidden;
+
+      &:hover {
+        transform: scale(1.05);
+        filter: brightness(50%);
+
+        &--button {
+          background-color: green;
+          display: none;
+        }
+      }
+
+      &--button {
+        position: absolute;
+        z-index: 1;
+      }
+
+      &--image {
+        height: 60%;
+        backface-visibility: hidden;
+      }
+
+      &--title {
+        backface-visibility: hidden;
+      }
+
+      &--description {
+        max-width: 80%;
+        margin: auto;
+        backface-visibility: hidden;
+      }
+
+      &--price {
+        backface-visibility: hidden;
+      }
+    }
+  }
 }

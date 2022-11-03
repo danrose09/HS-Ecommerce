@@ -4,7 +4,7 @@
     position: fixed;
     z-index: -100;
     width: 100%;
-
+    filter: brightness(85%);
     opacity: 0.9;
 
     @include respond(tab-port) {
@@ -21,8 +21,8 @@
     margin: auto;
     text-align: center;
     padding: 12rem 0 2rem 0;
-    color: white;
-    font-size: 8rem;
+    color: whitesmoke;
+    font-size: 8.5rem;
     letter-spacing: 0.3ch;
     width: 50%;
     animation: fadeIn 2000ms 1000ms;
